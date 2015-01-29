@@ -4,3 +4,7 @@
 
 import random, sys, pygame, time, copy
 from pygame.locals import *
+
+FPS = 10 # frames per second to update the screen
+WINDOWWIDTH = 640 # width of the program's window, in pixels
+WINDOWHEIGHT = 480 # height in pixels
