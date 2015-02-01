@@ -13,3 +13,5 @@ BOARDWIDTH = 8 # how many columns of spaces on the game board
 BOARDHEIGHT = 8 # how many rows of spaces on the game board
 WHITE_TILE = 'WHITE_TILE' # an arbitrary but unique value
 BLACK_TILE = 'BLACK_TILE' # an arbitrary but unique value
+EMPTY_SPACE = 'EMPTY_SPACE' # an arbitrary but unique value
+HINT_TILE = 'HINT_TILE' # an arbitrary but unique value
