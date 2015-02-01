@@ -11,3 +11,5 @@ WINDOWHEIGHT = 480 # height in pixels
 SPACESIZE = 50 # width & height of each space on the board, in pixels
 BOARDWIDTH = 8 # how many columns of spaces on the game board
 BOARDHEIGHT = 8 # how many rows of spaces on the game board
+WHITE_TILE = 'WHITE_TILE' # an arbitrary but unique value
+BLACK_TILE = 'BLACK_TILE' # an arbitrary but unique value
