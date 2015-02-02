@@ -217,3 +217,34 @@ textSurf = FONT.render(text, True, TEXTCOLOR, TEXTBGCOLOR1)
 
 def translateBoardToPixelCoord(x, y):
     return XMARGIN + x * SPACESIZE + int(SPACESIZE / 2), YMARGIN + y * SPACESIZE + int(SPACESIZE / 2)
+    
+    def animateTileChange(tilesToFlip, tileColor, additionalTile):
+    # Draw the additional tile that was just laid down. (Otherwise we'd
+    # have to completely redraw the board & the board info.)
+    if tileColor == WHITE_TILE:
+        additionalTileColor = WHITE
+    else:
+        additionalTileColor = BLACK
+    additionalTileX, additionalTileY = translateBoardToPixelCoord(additionalTile[0], additionalTile[1])
+    pygame.draw.circle(DISPLAYSURF, additionalTileColor, (additionalTileX, additionalTileY), int(SPACESIZE / 2) - 4)
+    pygame.display.update()
+
+    for rgbValues in range(0, 255, int(ANIMATIONSPEED * 2.55)):
+        if rgbValues > 255:
+            rgbValues = 255
+        elif rgbValues < 0:
+            rgbValues = 0
+
+        if tileColor == WHITE_TILE:
+            color = tuple([rgbValues] * 3) # rgbValues goes from 0 to 255
+        elif tileColor == BLACK_TILE:
+            color = tuple([255 - rgbValues] * 3) # rgbValues goes from 255 to 0
+
+        for x, y in tilesToFlip:
+            centerx, centery = translateBoardToPixelCoord(x, y)
+            pygame.draw.circle(DISPLAYSURF, color, (centerx, centery), int(SPACESIZE / 2) - 4)
+        pygame.display.update()
+        MAINCLOCK.tick(FPS)
+        checkForQuit()
+
+
