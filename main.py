@@ -176,3 +176,13 @@ def runGame():
                (scores[computerTile] - scores[playerTile])
     else:
         text = 'The game was a tie!'
+
+textSurf = FONT.render(text, True, TEXTCOLOR, TEXTBGCOLOR1)
+    textRect = textSurf.get_rect()
+    textRect.center = (int(WINDOWWIDTH / 2), int(WINDOWHEIGHT / 2))
+    DISPLAYSURF.blit(textSurf, textRect)
+
+    # Display the "Play again?" text with Yes and No buttons.
+    text2Surf = BIGFONT.render('Play again?', True, TEXTCOLOR, TEXTBGCOLOR1)
+    text2Rect = text2Surf.get_rect()
+    text2Rect.center = (int(WINDOWWIDTH / 2), int(WINDOWHEIGHT / 2) + 50)
