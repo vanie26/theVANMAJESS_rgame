@@ -247,4 +247,17 @@ def translateBoardToPixelCoord(x, y):
         MAINCLOCK.tick(FPS)
         checkForQuit()
 
+def drawBoard(board):
+    # Draw background of board.
+    DISPLAYSURF.blit(BGIMAGE, BGIMAGE.get_rect())
+
+    # Draw grid lines of the board.
+    for x in range(BOARDWIDTH + 1):
+        # Draw the horizontal lines.
+        startx = (x * SPACESIZE) + XMARGIN
+        starty = YMARGIN
+        endx = (x * SPACESIZE) + XMARGIN
+        endy = YMARGIN + (BOARDHEIGHT * SPACESIZE)
+        pygame.draw.line(DISPLAYSURF, GRIDLINECOLOR, (startx, starty), (endx, endy))
+    for y in range(BOARDHEIGHT + 1):
 
