@@ -15,3 +15,7 @@ WHITE_TILE = 'WHITE_TILE' # an arbitrary but unique value
 BLACK_TILE = 'BLACK_TILE' # an arbitrary but unique value
 EMPTY_SPACE = 'EMPTY_SPACE' # an arbitrary but unique value
 HINT_TILE = 'HINT_TILE' # an arbitrary but unique value
+ANIMATIONSPEED = 25 # integer from 1 to 100, higher is faster animation
+
+# Amount of space on the left & right side (XMARGIN) or above and below
+# (YMARGIN) the game board, in pixels.
