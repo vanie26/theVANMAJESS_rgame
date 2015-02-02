@@ -62,3 +62,117 @@ def main():
     while True:
         if runGame() == False:
             break
+
+
+def runGame():
+    # Plays a single game of reversi each time this function is called.
+
+    # Reset the board and game.
+    mainBoard = getNewBoard()
+    resetBoard(mainBoard)
+    showHints = False
+    turn = random.choice(['computer', 'player'])
+
+    # Draw the starting board and ask the player what color they want.
+    drawBoard(mainBoard)
+    playerTile, computerTile = enterPlayerTile()
+
+    # Make the Surface and Rect objects for the "New Game" and "Hints" buttons
+    newGameSurf = FONT.render('New Game', True, TEXTCOLOR, TEXTBGCOLOR2)
+    newGameRect = newGameSurf.get_rect()
+    newGameRect.topright = (WINDOWWIDTH - 8, 10)
+    hintsSurf = FONT.render('Hints', True, TEXTCOLOR, TEXTBGCOLOR2)
+    hintsRect = hintsSurf.get_rect()
+    hintsRect.topright = (WINDOWWIDTH - 8, 40)
+
+    while True: # main game loop
+        # Keep looping for player and computer's turns.
+        if turn == 'player':
+            # Player's turn:
+            if getValidMoves(mainBoard, playerTile) == []:
+                # If it's the player's turn but they
+                # can't move, then end the game.
+                break
+            movexy = None
+            while movexy == None:
+                # Keep looping until the player clicks on a valid space.
+
+                # Determine which board data structure to use for display.
+                if showHints:
+                    boardToDraw = getBoardWithValidMoves(mainBoard, playerTile)
+                else:
+                    boardToDraw = mainBoard
+
+                checkForQuit()
+                for event in pygame.event.get(): # event handling loop
+                    if event.type == MOUSEBUTTONUP:
+                        # Handle mouse click events
+                        mousex, mousey = event.pos
+                        if newGameRect.collidepoint( (mousex, mousey) ):
+                            # Start a new game
+                            return True
+                        elif hintsRect.collidepoint( (mousex, mousey) ):
+                            # Toggle hints mode
+                            showHints = not showHints
+                        # movexy is set to a two-item tuple XY coordinate, or None value
+                        movexy = getSpaceClicked(mousex, mousey)
+                        if movexy != None and not isValidMove(mainBoard, playerTile, movexy[0], movexy[1]):
+                            movexy = None
+
+                # Draw the game board.
+                drawBoard(boardToDraw)
+                drawInfo(boardToDraw, playerTile, computerTile, turn)
+
+                # Draw the "New Game" and "Hints" buttons.
+                DISPLAYSURF.blit(newGameSurf, newGameRect)
+                DISPLAYSURF.blit(hintsSurf, hintsRect)
+
+                MAINCLOCK.tick(FPS)
+                pygame.display.update()
+
+            # Make the move and end the turn.
+            makeMove(mainBoard, playerTile, movexy[0], movexy[1], True)
+            if getValidMoves(mainBoard, computerTile) != []:
+                # Only set for the computer's turn if it can make a move.
+                turn = 'computer'
+
+        else:
+            # Computer's turn:
+            if getValidMoves(mainBoard, computerTile) == []:
+                # If it was set to be the computer's turn but
+                # they can't move, then end the game.
+                break
+
+            # Draw the board.
+            drawBoard(mainBoard)
+            drawInfo(mainBoard, playerTile, computerTile, turn)
+
+            # Draw the "New Game" and "Hints" buttons.
+            DISPLAYSURF.blit(newGameSurf, newGameRect)
+            DISPLAYSURF.blit(hintsSurf, hintsRect)
+
+            # Make it look like the computer is thinking by pausing a bit.
+            pauseUntil = time.time() + random.randint(5, 15) * 0.1
+            while time.time() < pauseUntil:
+                pygame.display.update()
+
+            # Make the move and end the turn.
+            x, y = getComputerMove(mainBoard, computerTile)
+            makeMove(mainBoard, computerTile, x, y, True)
+            if getValidMoves(mainBoard, playerTile) != []:
+                # Only set for the player's turn if they can make a move.
+                turn = 'player'
+
+    # Display the final score.
+    drawBoard(mainBoard)
+    scores = getScoreOfBoard(mainBoard)
+
+    # Determine the text of the message to display.
+    if scores[playerTile] > scores[computerTile]:
+        text = 'You beat the computer by %s points! Congratulations!' % \
+               (scores[playerTile] - scores[computerTile])
+    elif scores[playerTile] < scores[computerTile]:
+        text = 'You lost. The computer beat you by %s points.' % \
+               (scores[computerTile] - scores[playerTile])
+    else:
+        text = 'The game was a tie!'
