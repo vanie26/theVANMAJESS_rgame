@@ -266,3 +266,16 @@ def drawBoard(board):
         endx = XMARGIN + (BOARDWIDTH * SPACESIZE)
         endy = (y * SPACESIZE) + YMARGIN
         pygame.draw.line(DISPLAYSURF, GRIDLINECOLOR, (startx, starty), (endx, endy))
+        
+      # Draw the black & white tiles or hint spots.
+    for x in range(BOARDWIDTH):
+        for y in range(BOARDHEIGHT):
+            centerx, centery = translateBoardToPixelCoord(x, y)
+            if board[x][y] == WHITE_TILE or board[x][y] == BLACK_TILE:
+                if board[x][y] == WHITE_TILE:
+                    tileColor = WHITE
+                else:
+                    tileColor = BLACK
+                pygame.draw.circle(DISPLAYSURF, tileColor, (centerx, centery), int(SPACESIZE / 2) - 4)
+            if board[x][y] == HINT_TILE:
+                pygame.draw.rect(DISPLAYSURF, HINTCOLOR, (centerx - 4, centery - 4, 8, 8))
