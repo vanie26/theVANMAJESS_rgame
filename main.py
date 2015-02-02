@@ -263,3 +263,6 @@ def drawBoard(board):
         # Draw the vertical lines.
         startx = XMARGIN
         starty = (y * SPACESIZE) + YMARGIN
+        endx = XMARGIN + (BOARDWIDTH * SPACESIZE)
+        endy = (y * SPACESIZE) + YMARGIN
+        pygame.draw.line(DISPLAYSURF, GRIDLINECOLOR, (startx, starty), (endx, endy))
