@@ -28,3 +28,6 @@ BLACK      = (  0,   0,   0)
 GREEN      = (  0, 155,   0)
 BRIGHTBLUE = (  0,  50, 255)
 BROWN      = (174,  94,   0)
+
+TEXTBGCOLOR1 = BRIGHTBLUE
+TEXTBGCOLOR2 = GREEN
