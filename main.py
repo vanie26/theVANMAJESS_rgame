@@ -196,3 +196,24 @@ textSurf = FONT.render(text, True, TEXTCOLOR, TEXTBGCOLOR1)
     noSurf = BIGFONT.render('No', True, TEXTCOLOR, TEXTBGCOLOR1)
     noRect = noSurf.get_rect()
     noRect.center = (int(WINDOWWIDTH / 2) + 60, int(WINDOWHEIGHT / 2) + 90)
+
+ while True:
+        # Process events until the user clicks on Yes or No.
+        checkForQuit()
+        for event in pygame.event.get(): # event handling loop
+            if event.type == MOUSEBUTTONUP:
+                mousex, mousey = event.pos
+                if yesRect.collidepoint( (mousex, mousey) ):
+                    return True
+                elif noRect.collidepoint( (mousex, mousey) ):
+                    return False
+        DISPLAYSURF.blit(textSurf, textRect)
+        DISPLAYSURF.blit(text2Surf, text2Rect)
+        DISPLAYSURF.blit(yesSurf, yesRect)
+        DISPLAYSURF.blit(noSurf, noRect)
+        pygame.display.update()
+        MAINCLOCK.tick(FPS)
+
+
+def translateBoardToPixelCoord(x, y):
+    return XMARGIN + x * SPACESIZE + int(SPACESIZE / 2), YMARGIN + y * SPACESIZE + int(SPACESIZE / 2)
