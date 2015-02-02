@@ -34,3 +34,31 @@ TEXTBGCOLOR2 = GREEN
 GRIDLINECOLOR = BLACK
 TEXTCOLOR = WHITE
 HINTCOLOR = BLUE
+
+
+
+def main():
+    global MAINCLOCK, DISPLAYSURF, FONT, BIGFONT, BGIMAGE
+
+    pygame.init()
+    MAINCLOCK = pygame.time.Clock()
+    DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
+    pygame.display.set_caption('theVANMAJESS_rgame')
+    FONT = pygame.font.Font('freesansbold.ttf', 16)
+    BIGFONT = pygame.font.Font('freesansbold.ttf', 32)
+
+    # Set up the background image.
+    boardImage = pygame.image.load('bg5.png')
+    # Use smoothscale() to stretch the board image to fit the entire board:
+    boardImage = pygame.transform.smoothscale(boardImage, (BOARDWIDTH * SPACESIZE, BOARDHEIGHT * SPACESIZE))
+    boardImageRect = boardImage.get_rect()
+    boardImageRect.topleft = (XMARGIN, YMARGIN)
+    BGIMAGE = pygame.image.load('bg2.png')
+    # Use smoothscale() to stretch the background image to fit the entire window:
+    BGIMAGE = pygame.transform.smoothscale(BGIMAGE, (WINDOWWIDTH, WINDOWHEIGHT))
+    BGIMAGE.blit(boardImage, boardImageRect)
+
+    # Run the main game.
+    while True:
+        if runGame() == False:
+            break
