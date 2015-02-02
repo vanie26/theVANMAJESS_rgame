@@ -186,3 +186,13 @@ textSurf = FONT.render(text, True, TEXTCOLOR, TEXTBGCOLOR1)
     text2Surf = BIGFONT.render('Play again?', True, TEXTCOLOR, TEXTBGCOLOR1)
     text2Rect = text2Surf.get_rect()
     text2Rect.center = (int(WINDOWWIDTH / 2), int(WINDOWHEIGHT / 2) + 50)
+
+ # Make "Yes" button.
+    yesSurf = BIGFONT.render('Yes', True, TEXTCOLOR, TEXTBGCOLOR1)
+    yesRect = yesSurf.get_rect()
+    yesRect.center = (int(WINDOWWIDTH / 2) - 60, int(WINDOWHEIGHT / 2) + 90)
+
+    # Make "No" button.
+    noSurf = BIGFONT.render('No', True, TEXTCOLOR, TEXTBGCOLOR1)
+    noRect = noSurf.get_rect()
+    noRect.center = (int(WINDOWWIDTH / 2) + 60, int(WINDOWHEIGHT / 2) + 90)
