@@ -279,3 +279,15 @@ def drawBoard(board):
                 pygame.draw.circle(DISPLAYSURF, tileColor, (centerx, centery), int(SPACESIZE / 2) - 4)
             if board[x][y] == HINT_TILE:
                 pygame.draw.rect(DISPLAYSURF, HINTCOLOR, (centerx - 4, centery - 4, 8, 8))
+
+	def getSpaceClicked(mousex, mousey):
+    # Return a tuple of two integers of the board space coordinates where
+    # the mouse was clicked. (Or returns None not in any space.)
+    for x in range(BOARDWIDTH):
+        for y in range(BOARDHEIGHT):
+            if mousex > x * SPACESIZE + XMARGIN and \
+               mousex < (x + 1) * SPACESIZE + XMARGIN and \
+               mousey > y * SPACESIZE + YMARGIN and \
+               mousey < (y + 1) * SPACESIZE + YMARGIN:
+                return (x, y)
+    return None
