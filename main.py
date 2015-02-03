@@ -291,3 +291,11 @@ def drawBoard(board):
                mousey < (y + 1) * SPACESIZE + YMARGIN:
                 return (x, y)
     return None
+	
+	def drawInfo(board, playerTile, computerTile, turn):
+    # Draws scores and whose turn it is at the bottom of the screen.
+    scores = getScoreOfBoard(board)
+    scoreSurf = FONT.render("Player Score: %s    Computer Score: %s    %s's Turn" % (str(scores[playerTile]), str(scores[computerTile]), turn.title()), True, TEXTCOLOR)
+    scoreRect = scoreSurf.get_rect()
+    scoreRect.bottomleft = (10, WINDOWHEIGHT - 5)
+    DISPLAYSURF.blit(scoreSurf, scoreRect)
