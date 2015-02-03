@@ -299,3 +299,9 @@ def drawBoard(board):
     scoreRect = scoreSurf.get_rect()
     scoreRect.bottomleft = (10, WINDOWHEIGHT - 5)
     DISPLAYSURF.blit(scoreSurf, scoreRect)
+	
+	def resetBoard(board):
+    # Blanks out the board it is passed, and sets up starting tiles.
+    for x in range(BOARDWIDTH):
+        for y in range(BOARDHEIGHT):
+            board[x][y] = EMPTY_SPACE
