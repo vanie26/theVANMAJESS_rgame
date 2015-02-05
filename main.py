@@ -312,8 +312,10 @@ def drawBoard(board):
     board[4][3] = BLACK_TILE
     board[4][4] = WHITE_TILE
 	
-	def getNewBoard():
+def getNewBoard():
 	# Creates a brand new, empty board data structure.
 	board = []
     for i in range(BOARDWIDTH):
     	board.append([EMPTY_SPACE] * BOARDHEIGHT)
+   
+    return board	
