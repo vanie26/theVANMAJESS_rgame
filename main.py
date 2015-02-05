@@ -313,3 +313,4 @@ def drawBoard(board):
     board[4][4] = WHITE_TILE
 	
 	def getNewBoard():
+	# Creates a brand new, empty board data structure.
