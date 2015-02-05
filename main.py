@@ -316,3 +316,4 @@ def drawBoard(board):
 	# Creates a brand new, empty board data structure.
 	board = []
     for i in range(BOARDWIDTH):
+    	board.append([EMPTY_SPACE] * BOARDHEIGHT)
