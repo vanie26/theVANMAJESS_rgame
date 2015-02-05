@@ -359,3 +359,5 @@ def isValidMove(board, tile, xstart, ystart):
 		 while True:
                     x -= xdirection
                     y -= ydirection
+		    if x == xstart and y == ystart:
+                        break
