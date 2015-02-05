@@ -329,3 +329,7 @@ def isValidMove(board, tile, xstart, ystart):
     board[xstart][ystart] = tile # temporarily set the tile on the board.	
 
     if tile == WHITE_TILE:
+    	otherTile = BLACK_TILE
+    else:
+        otherTile = WHITE_TILE
+    	
