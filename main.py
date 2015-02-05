@@ -321,5 +321,7 @@ def getNewBoard():
     return board	
 
 def isValidMove(board, tile, xstart, ystart):
-    # Returns False if the player's move is invalid. If it is a valid	
+    # Returns False if the player's move is invalid. If it is a valid
+    # move, returns a list of spaces of the captured pieces.
+    
 	
