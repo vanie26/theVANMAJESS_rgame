@@ -345,3 +345,5 @@ def isValidMove(board, tile, xstart, ystart):
             y += ydirection
 	    if not isOnBoard(x, y):
                 continue
+            while board[x][y] == otherTile:    
+                
