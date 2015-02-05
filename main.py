@@ -319,3 +319,5 @@ def getNewBoard():
     	board.append([EMPTY_SPACE] * BOARDHEIGHT)
    
     return board	
+
+def isValidMove(board, tile, xstart, ystart):
