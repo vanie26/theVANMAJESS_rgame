@@ -333,3 +333,5 @@ def isValidMove(board, tile, xstart, ystart):
     else:
         otherTile = WHITE_TILE
     	
+    tilesToFlip = []
+    # check each of the eight directions:
