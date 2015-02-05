@@ -339,3 +339,5 @@ def isValidMove(board, tile, xstart, ystart):
 	x, y = xstart, ystart
         x += xdirection
         y += ydirection
+	if isOnBoard(x, y) and board[x][y] == otherTile:
+            # The piece belongs to the other player next to our piece.
