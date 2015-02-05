@@ -314,3 +314,5 @@ def drawBoard(board):
 	
 	def getNewBoard():
 	# Creates a brand new, empty board data structure.
+	board = []
+    for i in range(BOARDWIDTH):
