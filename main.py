@@ -356,3 +356,6 @@ def isValidMove(board, tile, xstart, ystart):
 		# There are pieces to flip over. Go in the reverse
                 # direction until we reach the original space, noting all
 		# the tiles along the way.
+		 while True:
+                    x -= xdirection
+                    y -= ydirection
