@@ -326,4 +326,4 @@ def isValidMove(board, tile, xstart, ystart):
     if board[xstart][ystart] != EMPTY_SPACE or not isOnBoard(xstart, ystart):
     	return False
     	
-	
+    board[xstart][ystart] = tile # temporarily set the tile on the board.	
