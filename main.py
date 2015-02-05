@@ -306,7 +306,7 @@ def drawBoard(board):
         for y in range(BOARDHEIGHT):
             board[x][y] = EMPTY_SPACE
 	
-	# Add starting pieces to the center
+	# Add starting pieces to the center.
     board[3][3] = WHITE_TILE
     board[3][4] = BLACK_TILE
     board[4][3] = BLACK_TILE
