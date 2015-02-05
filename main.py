@@ -336,3 +336,6 @@ def isValidMove(board, tile, xstart, ystart):
     tilesToFlip = []
     # check each of the eight directions:
     for xdirection, ydirection in [[0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1]]:
+	x, y = xstart, ystart
+        x += xdirection
+        y += ydirection
