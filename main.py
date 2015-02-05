@@ -355,3 +355,4 @@ def isValidMove(board, tile, xstart, ystart):
             if board[x][y] == tile:
 		# There are pieces to flip over. Go in the reverse
                 # direction until we reach the original space, noting all
+		# the tiles along the way.
