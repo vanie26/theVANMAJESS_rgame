@@ -311,3 +311,5 @@ def drawBoard(board):
     board[3][4] = BLACK_TILE
     board[4][3] = BLACK_TILE
     board[4][4] = WHITE_TILE
+	
+	def getNewBoard():
