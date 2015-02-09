@@ -366,3 +366,4 @@ def isValidMove(board, tile, xstart, ystart):
 	board[xstart][ystart] = EMPTY_SPACE # make space empty
 		if len(tilesToFlip) == 0: # If no tiles flipped, this move is invalid
 		return False
+	return tilesToFlip
