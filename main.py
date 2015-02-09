@@ -362,3 +362,5 @@ def isValidMove(board, tile, xstart, ystart):
 		    if x == xstart and y == ystart:
                         break
 		    tilesToFlip.append([x, y])
+
+ board[xstart][ystart] = EMPTY_SPACE # make space empty
