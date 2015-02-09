@@ -370,3 +370,4 @@ def isValidMove(board, tile, xstart, ystart):
 	
 def isOnBoard(x, y):
 # Returns True if the coordinates are located on the board.
+	return x >= 0 and x < BOARDWIDTH and y >= 0 and y < BOARDHEIGHT
