@@ -369,3 +369,4 @@ def isValidMove(board, tile, xstart, ystart):
 	return tilesToFlip
 	
 def isOnBoard(x, y):
+# Returns True if the coordinates are located on the board.
