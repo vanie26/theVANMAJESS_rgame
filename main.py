@@ -363,5 +363,6 @@ def isValidMove(board, tile, xstart, ystart):
                         break
 		    tilesToFlip.append([x, y])
 
- board[xstart][ystart] = EMPTY_SPACE # make space empty
- if len(tilesToFlip) == 0: # If no tiles flipped, this move is invalid
+	board[xstart][ystart] = EMPTY_SPACE # make space empty
+		if len(tilesToFlip) == 0: # If no tiles flipped, this move is invalid
+		return False
