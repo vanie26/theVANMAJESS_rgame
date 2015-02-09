@@ -374,3 +374,4 @@ def isOnBoard(x, y):
 	
 def getBoardWithValidMoves(board, tile):
 # Returns a new board with hint markings.
+dupeBoard
