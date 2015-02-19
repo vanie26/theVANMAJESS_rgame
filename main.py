@@ -379,3 +379,6 @@ def getBoardWithValidMoves(board, tile):
 	for x, y in getValidMoves(dupeBoard, tile):
 		dupeBoard[x][y] = HINT_TILE
 	return dupeBoard
+	
+
+def getValidMoves(board, tile):
