@@ -415,5 +415,8 @@ def enterPlayerTile():
 
     	 xSurf = BIGFONT.render('White', True, TEXTCOLOR, TEXTBGCOLOR1)
     	 xRect = xSurf.get_rect()
+    	 xRect.center = (int(WINDOWWIDTH / 2) - 60, int(WINDOWHEIGHT / 2) + 40)
+
+    	 
     	 
     
