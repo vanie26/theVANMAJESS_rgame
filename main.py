@@ -388,3 +388,4 @@ def getValidMoves(board, tile):
 	for x in range(BOARDWIDTH):
 	    for y in range(BOARDHEIGHT):	
 		if isValidMove(board, tile, x, y) != False:	
+		   validMoves.append((x, y))
