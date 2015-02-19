@@ -392,3 +392,4 @@ def getValidMoves(board, tile):
 	 return validMoves
 
 def getScoreOfBoard(board):
+	# Determine the score by counting the tiles.
