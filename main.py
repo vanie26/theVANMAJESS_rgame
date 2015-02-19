@@ -386,3 +386,5 @@ def getValidMoves(board, tile):
 	validMoves = []
 
 	for x in range(BOARDWIDTH):
+	    for y in range(BOARDHEIGHT):	
+		
