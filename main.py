@@ -411,3 +411,6 @@ def enterPlayerTile():
 	 # Create the text.
 	 textSurf = FONT.render('Do you want to be white or black?', True, TEXTCOLOR, TEXTBGCOLOR1)
     	 textRect = textSurf.get_rect()
+    	 textRect.center = (int(WINDOWWIDTH / 2), int(WINDOWHEIGHT / 2))
+
+    	 
