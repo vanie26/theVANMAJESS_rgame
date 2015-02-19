@@ -383,3 +383,4 @@ def getBoardWithValidMoves(board, tile):
 
 def getValidMoves(board, tile):
 	# Returns a list of (x,y) tuples of all valid moves.
+	validMoves = []
