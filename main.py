@@ -408,5 +408,5 @@ def enterPlayerTile():
 	 # the player choose which color they want to be.  Returns
        	 # [WHITE_TILE, BLACK_TILE] if the player chooses to be White,
     	
-   
+	 # Create the text.
 
