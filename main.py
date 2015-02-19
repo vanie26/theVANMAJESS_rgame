@@ -373,5 +373,7 @@ def isOnBoard(x, y):
 	return x >= 0 and x < BOARDWIDTH and y >= 0 and y < BOARDHEIGHT
 	
 def getBoardWithValidMoves(board, tile):
-# Returns a new board with hint markings.
-dupeBoard = copy.deepcopy(board)
+	# Returns a new board with hint markings.
+	dupeBoard = copy.deepcopy(board)
+	
+	for x, y in getValidMoves(dupeBoard, tile):
