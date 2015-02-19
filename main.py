@@ -397,3 +397,4 @@ def getScoreOfBoard(board):
         oscore = 0
 	for x in range(BOARDWIDTH):
 		for y in range(BOARDHEIGHT):
+		    if board[x][y] == WHITE_TILE:
