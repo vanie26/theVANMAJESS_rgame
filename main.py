@@ -421,4 +421,4 @@ def enterPlayerTile():
     	 oRect = oSurf.get_rect()
     	 oRect.center = (int(WINDOWWIDTH / 2) + 60, int(WINDOWHEIGHT / 2) + 40)
 
-    
+    	 while True:
