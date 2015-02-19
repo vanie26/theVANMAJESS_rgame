@@ -404,5 +404,6 @@ def getScoreOfBoard(board):
 	return {WHITE_TILE:xscore, BLACK_TILE:oscore}
 
 def enterPlayerTile():
-
+	 # Draws the text and handles the mouse click events for letting
+   
 
