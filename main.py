@@ -406,6 +406,7 @@ def getScoreOfBoard(board):
 def enterPlayerTile():
 	 # Draws the text and handles the mouse click events for letting
 	 # the player choose which color they want to be.  Returns
-  
+       	 # [WHITE_TILE, BLACK_TILE] if the player chooses to be White,
+    	
    
 
