@@ -390,3 +390,5 @@ def getValidMoves(board, tile):
 		if isValidMove(board, tile, x, y) != False:	
 		   validMoves.append((x, y))
 	 return validMoves
+
+def getScoreOfBoard(board):
