@@ -402,3 +402,7 @@ def getScoreOfBoard(board):
 		    if board[x][y] == BLACK_TILE:
 			oscore += 1
 	return {WHITE_TILE:xscore, BLACK_TILE:oscore}
+
+def enterPlayerTile():
+
+
