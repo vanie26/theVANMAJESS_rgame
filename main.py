@@ -400,3 +400,4 @@ def getScoreOfBoard(board):
 		    if board[x][y] == WHITE_TILE:
 			xscore += 1
 		    if board[x][y] == BLACK_TILE:
+			oscore += 1
