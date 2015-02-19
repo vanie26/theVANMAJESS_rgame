@@ -409,4 +409,5 @@ def enterPlayerTile():
        	 # [WHITE_TILE, BLACK_TILE] if the player chooses to be White,
     	
 	 # Create the text.
-
+	 textSurf = FONT.render('Do you want to be white or black?', True, TEXTCOLOR, TEXTBGCOLOR1)
+    
