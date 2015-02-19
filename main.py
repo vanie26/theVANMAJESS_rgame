@@ -398,3 +398,4 @@ def getScoreOfBoard(board):
 	for x in range(BOARDWIDTH):
 		for y in range(BOARDHEIGHT):
 		    if board[x][y] == WHITE_TILE:
+			xscore += 1
