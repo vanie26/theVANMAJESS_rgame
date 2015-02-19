@@ -399,3 +399,4 @@ def getScoreOfBoard(board):
 		for y in range(BOARDHEIGHT):
 		    if board[x][y] == WHITE_TILE:
 			xscore += 1
+		    if board[x][y] == BLACK_TILE:
