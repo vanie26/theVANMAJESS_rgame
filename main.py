@@ -377,3 +377,4 @@ def getBoardWithValidMoves(board, tile):
 	dupeBoard = copy.deepcopy(board)
 	
 	for x, y in getValidMoves(dupeBoard, tile):
+		dupeBoard[x][y] = HINT_TILE
