@@ -396,3 +396,4 @@ def getScoreOfBoard(board):
 	xscore = 0
         oscore = 0
 	for x in range(BOARDWIDTH):
+		for y in range(BOARDHEIGHT):
