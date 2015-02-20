@@ -425,3 +425,4 @@ def enterPlayerTile():
 	      # Keep looping until the player has clicked on a color.
 	      checkForQuit()
 	      for event in pygame.event.get(): # event handling loop
+		   if event.type == MOUSEBUTTONUP:
