@@ -423,3 +423,4 @@ def enterPlayerTile():
 
     	 while True:
 	      # Keep looping until the player has clicked on a color.
+	      checkForQuit()
