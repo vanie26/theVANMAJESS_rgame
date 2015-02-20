@@ -431,3 +431,6 @@ def enterPlayerTile():
 			     return [WHITE_TILE, BLACK_TILE]
 			 elif oRect.collidepoint( (mousex, mousey) ):
 			     return [BLACK_TILE, WHITE_TILE]
+
+		 # Draw the screen.
+
