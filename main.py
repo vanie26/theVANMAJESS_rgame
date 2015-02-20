@@ -441,3 +441,4 @@ def enterPlayerTile():
 
 def makeMove(board, tile, xstart, ystart, realMove=False):
 	# Place the tile on the board at xstart, ystart, and flip tiles
+	# Returns False if this is an invalid move, True if it is valid.
