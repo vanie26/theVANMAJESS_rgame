@@ -436,3 +436,4 @@ def enterPlayerTile():
 		 DISPLAYSURF.blit(textSurf, textRect)
 		 DISPLAYSURF.blit(xSurf, xRect)
 		 DISPLAYSURF.blit(oSurf, oRect)
+		 pygame.display.update()
