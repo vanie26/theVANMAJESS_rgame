@@ -435,3 +435,4 @@ def enterPlayerTile():
 		 # Draw the screen.
 		 DISPLAYSURF.blit(textSurf, textRect)
 		 DISPLAYSURF.blit(xSurf, xRect)
+		 DISPLAYSURF.blit(oSurf, oRect)
