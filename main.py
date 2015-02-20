@@ -428,6 +428,6 @@ def enterPlayerTile():
 		   if event.type == MOUSEBUTTONUP:
 			 mousex, mousey = event.pos
 		 	 if xRect.collidepoint( (mousex, mousey) ):
-
+			     return [WHITE_TILE, BLACK_TILE]
 
 
