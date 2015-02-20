@@ -426,3 +426,8 @@ def enterPlayerTile():
 	      checkForQuit()
 	      for event in pygame.event.get(): # event handling loop
 		   if event.type == MOUSEBUTTONUP:
+			 mousex, mousey = event.pos
+
+
+
+
