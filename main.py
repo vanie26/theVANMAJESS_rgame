@@ -430,4 +430,4 @@ def enterPlayerTile():
 		 	 if xRect.collidepoint( (mousex, mousey) ):
 			     return [WHITE_TILE, BLACK_TILE]
 			 elif oRect.collidepoint( (mousex, mousey) ):
-
+			     return [BLACK_TILE, WHITE_TILE]
