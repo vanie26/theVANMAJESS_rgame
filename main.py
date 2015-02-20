@@ -433,4 +433,4 @@ def enterPlayerTile():
 			     return [BLACK_TILE, WHITE_TILE]
 
 		 # Draw the screen.
-
+		 DISPLAYSURF.blit(textSurf, textRect)
