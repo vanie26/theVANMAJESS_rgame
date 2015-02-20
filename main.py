@@ -422,3 +422,4 @@ def enterPlayerTile():
     	 oRect.center = (int(WINDOWWIDTH / 2) + 60, int(WINDOWHEIGHT / 2) + 40)
 
     	 while True:
+	      # Keep looping until the player has clicked on a color.
