@@ -427,7 +427,7 @@ def enterPlayerTile():
 	      for event in pygame.event.get(): # event handling loop
 		   if event.type == MOUSEBUTTONUP:
 			 mousex, mousey = event.pos
-
+		 	 if xRect.collidepoint( (mousex, mousey) ):
 
 
 
