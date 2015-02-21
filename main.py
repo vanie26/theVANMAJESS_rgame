@@ -460,4 +460,4 @@ def makeMove(board, tile, xstart, ystart, realMove=False):
 
 def isOnCorner(x, y):
        # Returns True if the position is in one of the four corners.
-   
+        return (x == 0 and y == 0) or \
