@@ -452,6 +452,7 @@ def makeMove(board, tile, xstart, ystart, realMove=False):
 	board[xstart][ystart] = tile    
 
 	if realMove:
+	   animateTileChange(tilesToFlip, tile, (xstart, ystart))
 
 
 
