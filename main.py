@@ -437,6 +437,8 @@ def enterPlayerTile():
 		 DISPLAYSURF.blit(xSurf, xRect)
 		 DISPLAYSURF.blit(oSurf, oRect)
 		 pygame.display.update()
+		 MAINCLOCK.tick(FPS)
+		 
 
 
 def makeMove(board, tile, xstart, ystart, realMove=False):
