@@ -458,3 +458,5 @@ def makeMove(board, tile, xstart, ystart, realMove=False):
 	    board[x][y] = tile
 	return True
 
+def isOnCorner(x, y):
+
