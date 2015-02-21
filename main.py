@@ -447,3 +447,10 @@ def makeMove(board, tile, xstart, ystart, realMove=False):
 	tilesToFlip = isValidMove(board, tile, xstart, ystart)
 
 	if tilesToFlip == False:
+	    return False
+
+
+
+
+
+
