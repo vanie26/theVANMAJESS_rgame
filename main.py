@@ -448,6 +448,8 @@ def makeMove(board, tile, xstart, ystart, realMove=False):
 
 	if tilesToFlip == False:
 	    return False
+	    
+	board[xstart][ystart] = tile    
 
 
 
