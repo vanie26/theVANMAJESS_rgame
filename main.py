@@ -451,7 +451,7 @@ def makeMove(board, tile, xstart, ystart, realMove=False):
 	    
 	board[xstart][ystart] = tile    
 
-
+	if realMove:
 
 
 
