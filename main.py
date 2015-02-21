@@ -463,3 +463,4 @@ def isOnCorner(x, y):
         return (x == 0 and y == 0) or \
 		(x == BOARDWIDTH and y == 0) or \
 		(x == 0 and y == BOARDHEIGHT) or \
+		(x == BOARDWIDTH and y == BOARDHEIGHT)
