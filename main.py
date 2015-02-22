@@ -170,7 +170,7 @@ def runGame():
     # Determine the text of the message to display.
     if scores[playerTile] > scores[computerTile]:
         text = 'You beat the computer by %s points! Congratulations!' % \
-               (scores[playerTile] - scores[computerTile])
+               (scores[playerTile] - scores[])
     elif scores[playerTile] < scores[computerTile]:
         text = 'You lost. The computer beat you by %s points.' % \
                (scores[computerTile] - scores[playerTile])
