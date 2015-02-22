@@ -173,7 +173,7 @@ def runGame():
                (scores[playerTile] - scores[computerTile])
     elif scores[playerTile] < scores[computerTile]:
         text = 'You lost. The computer beat you by %s points.' % \
-               (scores[computerTile] - scores[playerTile])
+               (scores[computerTile] - scores[])
     else:
         text = 'The game was a tie!'
 
