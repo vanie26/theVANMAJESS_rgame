@@ -482,3 +482,4 @@ def getComputerMove(board, computerTile):
 	bestScore = -1
 	for x, y in possibleMoves:
 		dupeBoard = copy.deepcopy(board)
+		makeMove(dupeBoard, computerTile, x, y)
