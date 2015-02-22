@@ -466,3 +466,4 @@ def isOnCorner(x, y):
 		(x == BOARDWIDTH and y == BOARDHEIGHT)
 
 def getComputerMove(board, computerTile):
+	# Given a board and the computer's tile, determine where to
