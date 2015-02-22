@@ -464,3 +464,5 @@ def isOnCorner(x, y):
 		(x == BOARDWIDTH and y == 0) or \
 		(x == 0 and y == BOARDHEIGHT) or \
 		(x == BOARDWIDTH and y == BOARDHEIGHT)
+
+def getComputerMove(board, computerTile):
