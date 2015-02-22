@@ -489,5 +489,5 @@ def getComputerMove(board, computerTile):
 			 bestScore = score
 		return bestMove
 
-	def checkForQuit():
-		for event in pygame.event.get((QUIT, KEYUP)):
+def checkForQuit():
+	for event in pygame.event.get((QUIT, KEYUP)): # event handling loop
