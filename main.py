@@ -207,7 +207,7 @@ textSurf = FONT.render(text, True, TEXTCOLOR, TEXTBGCOLOR1)
                     return True
                 elif noRect.collidepoint( (mousex, mousey) ):
                     return False
-        DISPLAYSURF.blit(textSurf, )
+        DISPLAYSURF.blit(textSurf, textRect)
         DISPLAYSURF.blit(text2Surf, text2Rect)
         DISPLAYSURF.blit(yesSurf, yesRect)
         DISPLAYSURF.blit(noSurf, noRect)
