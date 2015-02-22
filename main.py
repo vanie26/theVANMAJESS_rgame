@@ -476,3 +476,4 @@ def getComputerMove(board, computerTile):
 	# always go for a corner if available.
 	for x, y in possibleMoves:
 		for x, y in possibleMoves:
+			return [x, y]
