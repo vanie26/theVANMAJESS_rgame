@@ -484,3 +484,4 @@ def getComputerMove(board, computerTile):
 		dupeBoard = copy.deepcopy(board)
 		makeMove(dupeBoard, computerTile, x, y)
 		score = getScoreOfBoard(dupeBoard)[computerTile]
+		if score > bestScore:
