@@ -488,3 +488,5 @@ def getComputerMove(board, computerTile):
 			 bestMove = [x, y]
 			 bestScore = score
 		return bestMove
+
+	def checkForQuit():
