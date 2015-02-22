@@ -469,3 +469,5 @@ def getComputerMove(board, computerTile):
 	# Given a board and the computer's tile, determine where to
 	# move and return that move as a [x, y] list.
  possibleMoves = getValidMoves(board, computerTile)
+ 
+	# randomize the order of the possible moves
