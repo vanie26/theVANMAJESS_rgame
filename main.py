@@ -490,3 +490,4 @@ def getComputerMove(board, computerTile):
 		return bestMove
 
 	def checkForQuit():
+		for event in pygame.event.get((QUIT, KEYUP)):
