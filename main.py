@@ -218,7 +218,7 @@ textSurf = FONT.render(text, True, TEXTCOLOR, TEXTBGCOLOR1)
 def translateBoardToPixelCoord(x, y):
     return XMARGIN + x * SPACESIZE + int(SPACESIZE / 2), YMARGIN + y * SPACESIZE + int(SPACESIZE / 2)
     
-    def animateTileChange(, tileColor, additionalTile):
+    def animateTileChange(tilesToFlip, tileColor, additionalTile):
     # Draw the additional tile that was just laid down. (Otherwise we'd
     # have to completely redraw the board & the board info.)
     if tileColor == WHITE_TILE:
