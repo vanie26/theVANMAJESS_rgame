@@ -480,3 +480,4 @@ def getComputerMove(board, computerTile):
 			
 	# Go through all possible moves and remember the best scoring move
 	bestScore = -1
+	for x, y in possibleMoves:
