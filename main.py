@@ -487,3 +487,4 @@ def getComputerMove(board, computerTile):
 		if score > bestScore:
 			 bestMove = [x, y]
 			 bestScore = score
+		return bestMove
