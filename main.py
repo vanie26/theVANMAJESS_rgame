@@ -493,7 +493,7 @@ def checkForQuit():
 	for event in pygame.event.get((QUIT, KEYUP)): # event handling loop
 		if event.type == QUIT or (event.type == KEYUP and event.key == K_ESCAPE):
 			pygame.quit()
-			sys.exit()
+	
 
 if __name__ == '__main__':
 	 main()
