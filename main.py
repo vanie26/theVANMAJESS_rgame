@@ -2,7 +2,7 @@
 #Vanessa T. Biton , Jessa Mae Atutubo , Ma. Camille Ala
 
 
-import  sys, pygame, time, copy
+import random, sys, pygame, time, copy
 from pygame.locals import *
 
 FPS = 10 # frames per second to update the screen
