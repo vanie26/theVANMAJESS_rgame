@@ -471,3 +471,4 @@ def getComputerMove(board, computerTile):
  possibleMoves = getValidMoves(board, computerTile)
  
 	# randomize the order of the possible moves
+random.shuffle(possibleMoves)
