@@ -472,3 +472,5 @@ def getComputerMove(board, computerTile):
  
 	# randomize the order of the possible moves
 	random.shuffle(possibleMoves)
+	
+	# always go for a corner if available.
