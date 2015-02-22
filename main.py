@@ -222,7 +222,7 @@ def translateBoardToPixelCoord(x, y):
 	# Draw the additional title that was just laid down.(Otherwise we'd
     # have to completely redraw the board & the board info.)
     if tileColor == WHITE_TILE:
-        additionalTileColor = BLACK
+        additionalTileColor = WHITE
     else:
         additionalTileColor = BLACK
     additionalTileX, additionalTileY = translateBoardToPixelCoord(additionalTile[0], additionalTile[1])
