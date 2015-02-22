@@ -490,7 +490,7 @@ def getComputerMove(board, computerTile):
 		return bestMove
 
 def checkForQuit():
-	for event in pygame.event.get((QUIT, KEYUP)): # event handling loop
+	# event handling loop
 		if event.type == QUIT or (event.type == KEYUP and event.key == K_ESCAPE):
 			pygame.quit()
 			sys.exit()
