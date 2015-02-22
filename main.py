@@ -474,3 +474,4 @@ def getComputerMove(board, computerTile):
 	random.shuffle(possibleMoves)
 	
 	# always go for a corner if available.
+	for x, y in possibleMoves:
