@@ -486,3 +486,4 @@ def getComputerMove(board, computerTile):
 		score = getScoreOfBoard(dupeBoard)[computerTile]
 		if score > bestScore:
 			 bestMove = [x, y]
+			 bestScore = score
