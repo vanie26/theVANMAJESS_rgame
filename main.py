@@ -303,6 +303,7 @@ def drawInfo(board, playerTile, computerTile, turn):
     scoreRect = scoreSurf.get_rect()
     scoreRect.bottomleft = (10, WINDOWHEIGHT - 5)
     DISPLAYSURF.blit(scoreSurf, scoreRect)
+
 	
 def resetBoard(board):
     # Blanks out the board it is passed, and sets up starting tiles.
@@ -310,7 +311,6 @@ def resetBoard(board):
         for y in range(BOARDHEIGHT):
             board[x][y] = EMPTY_SPACE
 	
-   
     # Add starting pieces to the center.
     board[3][3] = WHITE_TILE
     board[3][4] = BLACK_TILE
