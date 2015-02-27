@@ -343,32 +343,32 @@ def isValidMove(board, tile, xstart, ystart):
     tilesToFlip = []
     # check each of the eight directions:
     for xdirection, ydirection in [[0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1]]:
-	x, y = xstart, ystart
+        x, y = xstart, ystart
         x += xdirection
         y += ydirection
-	if isOnBoard(x, y) and board[x][y] == otherTile:
+        if isOnBoard(x, y) and board[x][y] == otherTile:
             # The piece belongs to the other player next to our piece.
-	    x += xdirection
+            x += xdirection
             y += ydirection
-	    if not isOnBoard(x, y):
+            if not isOnBoard(x, y):
                 continue
-            while board[x][y] == otherTile:    
+            while board[x][y] == otherTile:
                 x += xdirection
                 y += ydirection
-		if not isOnBoard(x, y):
+                if not isOnBoard(x, y):
                     break # break out of while loop, continue in for loop
-	    if not isOnBoard(x, y):
+            if not isOnBoard(x, y):
                 continue
             if board[x][y] == tile:
-		# There are pieces to flip over. Go in the reverse
+                # There are pieces to flip over. Go in the reverse
                 # direction until we reach the original space, noting all
-		# the tiles along the way.
-		 while True:
+                # the tiles along the way.
+                while True:
                     x -= xdirection
                     y -= ydirection
-		    if x == xstart and y == ystart:
+                    if x == xstart and y == ystart:
                         break
-		    tilesToFlip.append([x, y])
+                    tilesToFlip.append([x, y])
 
 	board[xstart][ystart] = EMPTY_SPACE # make space empty
 	if len(tilesToFlip) == 0: # If no tiles flipped, this move is invalid
@@ -396,34 +396,34 @@ def getValidMoves(board, tile):
 
 	for x in range(BOARDWIDTH):
 	    for y in range(BOARDHEIGHT):	
-		if isValidMove(board, tile, x, y) != False:	
-		   validMoves.append((x, y))
+			if isValidMove(board, tile, x, y) != False:	
+				validMoves.append((x, y))
 	return validMoves
 
 
 def getScoreOfBoard(board):
 	# Determine the score by counting the tiles.
 	xscore = 0
-        oscore = 0
+	oscore = 0
 	for x in range(BOARDWIDTH):
 		for y in range(BOARDHEIGHT):
 		    if board[x][y] == WHITE_TILE:
-			xscore += 1
+				xscore += 1
 		    if board[x][y] == BLACK_TILE:
-			oscore += 1
+				oscore += 1
 	return {WHITE_TILE:xscore, BLACK_TILE:oscore}
 
 
 def enterPlayerTile():
-	 # Draws the text and handles the mouse click events for letting
-	 # the player choose which color they want to be.  Returns
-       	 # [WHITE_TILE, BLACK_TILE] if the player chooses to be White,
-    	 # [BLACK_TILE, WHITE_TILE] if Black.
+	# Draws the text and handles the mouse click events for letting
+	# the player choose which color they want to be.  Returns
+    # [WHITE_TILE, BLACK_TILE] if the player chooses to be White,
+    # [BLACK_TILE, WHITE_TILE] if Black.
     	 
-	 # Create the text.
-	 textSurf = FONT.render('Do you want to be white or black?', True, TEXTCOLOR, TEXTBGCOLOR1)
-    	 textRect = textSurf.get_rect()
-    	 textRect.center = (int(WINDOWWIDTH / 2), int(WINDOWHEIGHT / 2))
+	# Create the text.
+	textSurf = FONT.render('Do you want to be white or black?', True, TEXTCOLOR, TEXTBGCOLOR1)
+    textRect = textSurf.get_rect()
+    textRect.center = (int(WINDOWWIDTH / 2), int(WINDOWHEIGHT / 2))
 
     	 xSurf = BIGFONT.render('White', True, TEXTCOLOR, TEXTBGCOLOR1)
     	 xRect = xSurf.get_rect()
