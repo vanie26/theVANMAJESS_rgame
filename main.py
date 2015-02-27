@@ -425,31 +425,31 @@ def enterPlayerTile():
     textRect = textSurf.get_rect()
     textRect.center = (int(WINDOWWIDTH / 2), int(WINDOWHEIGHT / 2))
 
-    	 xSurf = BIGFONT.render('White', True, TEXTCOLOR, TEXTBGCOLOR1)
-    	 xRect = xSurf.get_rect()
-    	 xRect.center = (int(WINDOWWIDTH / 2) - 60, int(WINDOWHEIGHT / 2) + 40)
+    xSurf = BIGFONT.render('White', True, TEXTCOLOR, TEXTBGCOLOR1)
+    xRect = xSurf.get_rect()
+    xRect.center = (int(WINDOWWIDTH / 2) - 60, int(WINDOWHEIGHT / 2) + 40)
 
-    	 oSurf = BIGFONT.render('Black', True, TEXTCOLOR, TEXTBGCOLOR1)
-    	 oRect = oSurf.get_rect()
-    	 oRect.center = (int(WINDOWWIDTH / 2) + 60, int(WINDOWHEIGHT / 2) + 40)
+    oSurf = BIGFONT.render('Black', True, TEXTCOLOR, TEXTBGCOLOR1)
+    oRect = oSurf.get_rect()
+    oRect.center = (int(WINDOWWIDTH / 2) + 60, int(WINDOWHEIGHT / 2) + 40)
 
-    	 while True:
-	      # Keep looping until the player has clicked on a color.
-	      checkForQuit()
-	      for event in pygame.event.get(): # event handling loop
-		   if event.type == MOUSEBUTTONUP:
-			 mousex, mousey = event.pos
-		 	 if xRect.collidepoint( (mousex, mousey) ):
-			     return [WHITE_TILE, BLACK_TILE]
-			 elif oRect.collidepoint( (mousex, mousey) ):
-			     return [BLACK_TILE, WHITE_TILE]
+    while True:
+	    # Keep looping until the player has clicked on a color.
+	    checkForQuit()
+	    for event in pygame.event.get(): # event handling loop
+			if event.type == MOUSEBUTTONUP:
+				mousex, mousey = event.pos
+				if xRect.collidepoint( (mousex, mousey) ):
+					return [WHITE_TILE, BLACK_TILE]
+				elif oRect.collidepoint( (mousex, mousey) ):
+					return [BLACK_TILE, WHITE_TILE]
 
-		 # Draw the screen.
-		 DISPLAYSURF.blit(textSurf, textRect)
-		 DISPLAYSURF.blit(xSurf, xRect)
-		 DISPLAYSURF.blit(oSurf, oRect)
-		 pygame.display.update()
-		 MAINCLOCK.tick(FPS)
+		# Draw the screen.
+		DISPLAYSURF.blit(textSurf, textRect)
+		DISPLAYSURF.blit(xSurf, xRect)
+		DISPLAYSURF.blit(oSurf, oRect)
+		pygame.display.update()
+		MAINCLOCK.tick(FPS)
 		 
 
 def makeMove(board, tile, xstart, ystart, realMove=False):
@@ -463,7 +463,7 @@ def makeMove(board, tile, xstart, ystart, realMove=False):
 	board[xstart][ystart] = tile    
 
 	if realMove:
-	   animateTileChange(tilesToFlip, tile, (xstart, ystart))
+	    animateTileChange(tilesToFlip, tile, (xstart, ystart))
 
 	for x, y in tilesToFlip:
 	    board[x][y] = tile
@@ -471,11 +471,11 @@ def makeMove(board, tile, xstart, ystart, realMove=False):
 
 
 def isOnCorner(x, y):
-       # Returns True if the position is in one of the four corners.
-        return (x == 0 and y == 0) or \
-		(x == BOARDWIDTH and y == 0) or \
-		(x == 0 and y == BOARDHEIGHT) or \
-		(x == BOARDWIDTH and y == BOARDHEIGHT)
+    # Returns True if the position is in one of the four corners.
+    return (x == 0 and y == 0) or \
+		   (x == BOARDWIDTH and y == 0) or \
+		   (x == 0 and y == BOARDHEIGHT) or \
+		   (x == BOARDWIDTH and y == BOARDHEIGHT)
 
 
 def getComputerMove(board, computerTile):
@@ -488,7 +488,7 @@ def getComputerMove(board, computerTile):
 	
 	# always go for a corner if available.
 	for x, y in possibleMoves:
-		for x, y in possibleMoves:
+		if isOnCorner(x, y):
 			return [x, y]
 			
 	# Go through all possible moves and remember the best scoring move
@@ -498,16 +498,16 @@ def getComputerMove(board, computerTile):
 		makeMove(dupeBoard, computerTile, x, y)
 		score = getScoreOfBoard(dupeBoard)[computerTile]
 		if score > bestScore:
-			bestMove = [x,y]
+			bestMove = [x, y]
 			bestScore = score
 	return bestMove
 	
 
 def checkForQuit():
 	for event in pygame.event.get((QUIT, KEYUP)): # event handling loop
-	if event.type == QUIT or (event.type == KEYUP and event.key == K_ESCAPE):
-		pygame.quit()
-		sys.exit()
+		if event.type == QUIT or (event.type == KEYUP and event.key == K_ESCAPE):
+			pygame.quit()
+			sys.exit()
 
 		
 if __name__ == '__main__':
