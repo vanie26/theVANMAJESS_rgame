@@ -370,10 +370,11 @@ def isValidMove(board, tile, xstart, ystart):
                         break
                     tilesToFlip.append([x, y])
 
-	board[xstart][ystart] = EMPTY_SPACE # make space empty
-	if len(tilesToFlip) == 0: # If no tiles flipped, this move is invalid
-		return False
-	return tilesToFlip
+    board[xstart][ystart] = EMPTY_SPACE #make space empty
+
+    if len(tilesToFlip) == 0: # If no tiles flipped, this move is invalid
+        return False
+    return tilesToFlip
 	
 
 def isOnBoard(x, y):
@@ -396,8 +397,8 @@ def getValidMoves(board, tile):
 
 	for x in range(BOARDWIDTH):
 	    for y in range(BOARDHEIGHT):	
-			if isValidMove(board, tile, x, y) != False:	
-				validMoves.append((x, y))
+		    if isValidMove(board, tile, x, y) != False:
+			    validMoves.append((x, y))
 	return validMoves
 
 
@@ -408,9 +409,9 @@ def getScoreOfBoard(board):
 	for x in range(BOARDWIDTH):
 		for y in range(BOARDHEIGHT):
 		    if board[x][y] == WHITE_TILE:
-				xscore += 1
+			    xscore += 1
 		    if board[x][y] == BLACK_TILE:
-				oscore += 1
+			    oscore += 1
 	return {WHITE_TILE:xscore, BLACK_TILE:oscore}
 
 
@@ -421,7 +422,7 @@ def enterPlayerTile():
     # [BLACK_TILE, WHITE_TILE] if Black.
     	 
 	# Create the text.
-	textSurf = FONT.render('Do you want to be white or black?', True, TEXTCOLOR, TEXTBGCOLOR1)
+    textSurf = FONT.render('Do you want to be white or black?', True, TEXTCOLOR, TEXTBGCOLOR1)
     textRect = textSurf.get_rect()
     textRect.center = (int(WINDOWWIDTH / 2), int(WINDOWHEIGHT / 2))
 
@@ -437,19 +438,19 @@ def enterPlayerTile():
 	    # Keep looping until the player has clicked on a color.
 	    checkForQuit()
 	    for event in pygame.event.get(): # event handling loop
-			if event.type == MOUSEBUTTONUP:
-				mousex, mousey = event.pos
-				if xRect.collidepoint( (mousex, mousey) ):
-					return [WHITE_TILE, BLACK_TILE]
-				elif oRect.collidepoint( (mousex, mousey) ):
-					return [BLACK_TILE, WHITE_TILE]
+		    if event.type == MOUSEBUTTONUP:
+			    mousex, mousey = event.pos
+			    if xRect.collidepoint( (mousex, mousey) ):
+				    return [WHITE_TILE, BLACK_TILE]
+			    elif oRect.collidepoint( (mousex, mousey) ):
+				    return [BLACK_TILE, WHITE_TILE]
 
 		# Draw the screen.
-		DISPLAYSURF.blit(textSurf, textRect)
-		DISPLAYSURF.blit(xSurf, xRect)
-		DISPLAYSURF.blit(oSurf, oRect)
-		pygame.display.update()
-		MAINCLOCK.tick(FPS)
+	    DISPLAYSURF.blit(textSurf, textRect)
+	    DISPLAYSURF.blit(xSurf, xRect)
+	    DISPLAYSURF.blit(oSurf, oRect)
+	    pygame.display.update()
+	    MAINCLOCK.tick(FPS)
 		 
 
 def makeMove(board, tile, xstart, ystart, realMove=False):
@@ -481,26 +482,26 @@ def isOnCorner(x, y):
 def getComputerMove(board, computerTile):
 	# Given a board and the computer's tile, determine where to
 	# move and return that move as a [x, y] list.
- 	possibleMoves = getValidMoves(board, computerTile)
- 
-	# randomize the order of the possible moves
-	random.shuffle(possibleMoves)
-	
-	# always go for a corner if available.
-	for x, y in possibleMoves:
-		if isOnCorner(x, y):
-			return [x, y]
+            possibleMoves = getValidMoves(board, computerTile)
+
+ 	# randomize the order of the possible moves
+            random.shuffle(possibleMoves)
+        # always go for a corner if available.
+            for x, y in possibleMoves:
+    
+                if isOnCorner(x, y):
+                    return [x, y]
 			
 	# Go through all possible moves and remember the best scoring move
-	bestScore = -1
-	for x, y in possibleMoves:
-		dupeBoard = copy.deepcopy(board)
-		makeMove(dupeBoard, computerTile, x, y)
-		score = getScoreOfBoard(dupeBoard)[computerTile]
-		if score > bestScore:
-			bestMove = [x, y]
-			bestScore = score
-	return bestMove
+            bestScore = -1
+            for x, y in possibleMoves:
+                dupeBoard = copy.deepcopy(board)
+                makeMove(dupeBoard, computerTile, x, y)
+                score = getScoreOfBoard(dupeBoard)[computerTile]
+                if score > bestScore:
+                    bestMove = [x, y]
+                    bestScore = score
+            return bestMove
 	
 
 def checkForQuit():
